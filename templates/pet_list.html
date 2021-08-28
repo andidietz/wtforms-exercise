@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}Adopt{% endblock %}
+{% block content %}
+    <h1>Pets</h1>
+    <div>
+        {% for pet in pets %}
+        <div>
+            <img src="{{ pet.image_url() }}" alt="picture of {{pet.name}}">
+            <a href='/{{pet.id}}'>{{pet.name}}</a>
+            <b>is available!</b>
+        </div>
+        {% endfor %}
+    </div>
+    <!-- When is it best to put either an archer tag or a form-button tags? -->
+    <a href='/add'>Add a pet</a>
+{% endblock %}
